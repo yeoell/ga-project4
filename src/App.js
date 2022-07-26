@@ -1,12 +1,8 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Gameboard from "./Game";
 
 function App() {
-  return (
-    <div>
-      <p>test</p>
-    </div>
-  );
+  return <Gameboard />;
 }
 
 export default App;
