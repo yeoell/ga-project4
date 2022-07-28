@@ -49,6 +49,5 @@
   "bugs": {
     "url": "https://github.com/yeoell/ga-project4/issues"
   },
-  "homepage": "https://github.com/yeoell/ga-project4#readme",
   "proxy": "http://localhost:3001"
 }

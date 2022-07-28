@@ -1,8 +1,8 @@
 import "./App.css";
-import Gameboard from "./Game";
+import Workflow from "./Workflow";
 
 function App() {
-  return <Gameboard />;
+  return <Workflow />;
 }
 
 export default App;

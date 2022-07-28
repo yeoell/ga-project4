@@ -5,7 +5,7 @@ const port = process.env.PORT || 3001;
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("hello");
+  res.send("test");
 });
 
 app.use(express.static("./client/build"));
