@@ -2,22 +2,8 @@ import "./Game.css";
 
 function Gameboard({}) {
   return (
-    <div className="nav">
-      <header>
-        <h1>game</h1>
-      </header>
-      <div className="gameboard">
-        <div className="container">
-          <div className="row" id="row-1">
-            <div className="first square"></div>
-            <div className="square"></div>
-            <div className="square"></div>
-            <div className="square"></div>
-            <div className="square"></div>
-            <div className="square"></div>
-          </div>
-        </div>
-      </div>
+    <div>
+      <h1>heading</h1>
     </div>
   );
 }
