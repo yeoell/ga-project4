@@ -8,8 +8,8 @@ app.get("/", (req, res) => {
   res.send("hello");
 });
 
+app.use(express.static("./client/build"));
+
 app.listen(port, () => {
   console.log(`server listening on http://localhost:${port}`);
 });
-
-app.use(express.static("./client/build"));
