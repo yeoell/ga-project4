@@ -1,12 +1,74 @@
 import "./Workflow.css";
+import { Plan, Create, Build, Release, Support } from "./Stages";
+import {
+  PlanProcess,
+  CreateProcess,
+  BuildProcess,
+  ReleaseProcess,
+  SupportProcess,
+} from "./Process";
+import { useStickyBox } from "react-sticky-box";
+
+const Sidebar = () => {
+  const stickyRef = useStickyBox({ offsetTop: 20, offsetBottom: 20 });
+  return (
+    <div className="row">
+      <aside ref={stickyRef}>
+        <div>
+          <ul className="sticky" style={{ listStyleType: "none", padding: 0 }}>
+            <li>BDM</li>
+            <li>ADM</li>
+            <li>PM</li>
+            <li>BAM</li>
+            <li>MM</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  );
+};
 
 function Workflow() {
-  console.log("success");
   return (
     <div>
       <header>
         <h1>workflow</h1>
       </header>
+      <div className="process-flow">
+        <Sidebar />
+        <div className="container">
+          <div className="stage">
+            <Plan />
+          </div>
+          <div className="stage">
+            <Create />
+          </div>
+          <div className="stage">
+            <Build />
+          </div>
+          <div className="stage">
+            <Release />
+          </div>
+          <div className="stage">
+            <Support />
+          </div>
+          <div className="stage">
+            <PlanProcess />
+          </div>
+          <div className="stage">
+            <CreateProcess />
+          </div>
+          <div className="stage">
+            <BuildProcess />
+          </div>
+          <div className="stage">
+            <ReleaseProcess />
+          </div>
+          <div className="stage">
+            <SupportProcess />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

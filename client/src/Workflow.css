@@ -1,3 +1,8 @@
+* {
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -5,7 +10,6 @@ header {
 
 .process-flow {
   margin: auto;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,9 +18,21 @@ header {
 
 .container {
   display: grid;
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 5px;
+  row-gap: 5px;
+  /* height: 1500px; */
 }
 
-.row {
+.stage {
+  margin: 5px;
   display: inline-flex;
+  /* height: 50px; */
+  width: 200px;
+  border: solid 1px #000;
+  text-align: left;
+}
+
+aside {
+  border: solid 1px #000;
 }
