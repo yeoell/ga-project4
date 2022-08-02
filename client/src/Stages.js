@@ -8,7 +8,7 @@ function Plan() {
 
 function Create() {
   return (
-    <div>
+    <div style={{ backgroundColor: "#99ffbb" }}>
       <p>create</p>
     </div>
   );

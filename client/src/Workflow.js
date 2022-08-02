@@ -8,6 +8,8 @@ import {
   SupportProcess,
 } from "./Process";
 import { useStickyBox } from "react-sticky-box";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 const Sidebar = () => {
   const stickyRef = useStickyBox({ offsetTop: 20, offsetBottom: 20 });
@@ -16,11 +18,26 @@ const Sidebar = () => {
       <aside ref={stickyRef}>
         <div>
           <ul className="sticky" style={{ listStyleType: "none", padding: 0 }}>
-            <li>BDM</li>
-            <li>ADM</li>
-            <li>PM</li>
-            <li>BAM</li>
-            <li>MM</li>
+            <li>
+              <FontAwesomeIcon icon={faUser} size="2x" /> <br />
+              BDM
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faUser} size="2x" /> <br />
+              BAM
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faUser} size="2x" /> <br />
+              PM
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faUser} size="2x" /> <br />
+              ADM
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faUser} size="2x" /> <br />
+              MM
+            </li>
           </ul>
         </div>
       </aside>
@@ -34,8 +51,8 @@ function Workflow() {
       <header>
         <h1>workflow</h1>
       </header>
+      <Sidebar />
       <div className="process-flow">
-        <Sidebar />
         <div className="container">
           <div className="stage">
             <Plan />
@@ -52,6 +69,7 @@ function Workflow() {
           <div className="stage">
             <Support />
           </div>
+
           <div className="stage">
             <PlanProcess />
           </div>
@@ -67,6 +85,7 @@ function Workflow() {
           <div className="stage">
             <SupportProcess />
           </div>
+          <div></div>
         </div>
       </div>
     </div>

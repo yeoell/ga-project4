@@ -1,4 +1,5 @@
-import { TaskDescriptions } from "./TaskDescriptions";
+import { SourcingTasks, CreateTasks } from "./TaskDescriptions";
+import "./Tasks.css";
 
 function PlanStages() {
   return (
@@ -11,21 +12,35 @@ function PlanStages() {
       <p>Writer guidelines</p>
       <p>Determine content requirements</p>
       <p>Product proposal meeting</p>
+      <p>Industry endorsement</p>
     </div>
   );
 }
 
 function CreateStages() {
+  function test() {
+    console.log("clicked");
+  }
+
   return (
     <div>
       <h4>Sourcing</h4>
-      <p>Writer/SME sourcing</p>
-      <p>Define contract terms and SOWs</p>
-      <p>Creating and archiving contracts</p>
-      <p>Briefing and onboarding</p>
+      {SourcingTasks.map((task, index) => {
+        return (
+          <div key={index}>
+            <p onClick={test}>{task.task}</p>
+            {/* <p>{task.description}</p> */}
+          </div>
+        );
+      })}
       <h4>Content creation</h4>
-      <p>Manage content delivery</p>
-      <p>Finalise content</p>
+      {CreateTasks.map((task, index) => {
+        return (
+          <div key={index}>
+            <p>{task.task}</p>
+          </div>
+        );
+      })}
     </div>
   );
 }
