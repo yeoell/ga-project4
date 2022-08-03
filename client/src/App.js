@@ -1,8 +1,16 @@
 import "./App.css";
-import Workflow from "./Workflow";
+import NavBar from "./NavBar";
+import "./Workflow.css";
 
 function App() {
-  return <Workflow />;
+  return (
+    <div>
+      <header>
+        <h1>workflow</h1>
+      </header>
+      <NavBar />
+    </div>
+  );
 }
 
 export default App;

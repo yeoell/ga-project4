@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "start-dev": "nodemon server.js",
     "heroku-postbuild": "cd client && yarn && yarn build"
   },
   "repository": {
@@ -18,7 +19,12 @@
   },
   "homepage": "https://github.com/yeoell/ga-project4#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-pg-simple": "^7.0.0",
+    "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "json": "^11.0.0",
     "nodemon": "^2.0.19",
     "pg": "^8.7.3"
   },

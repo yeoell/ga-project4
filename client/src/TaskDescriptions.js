@@ -16,7 +16,7 @@ const SourcingTasks = [
   },
   {
     task: "Briefing and onboarding",
-    description: "provide writers/SMEs with project brief",
+    description: "provide writers/SMEs with a project brief",
     responsible: "ADM",
   },
 ];

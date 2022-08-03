@@ -1,5 +1,4 @@
 import "./Workflow.css";
-import { Plan, Create, Build, Release, Support } from "./Stages";
 import {
   PlanProcess,
   CreateProcess,
@@ -48,26 +47,23 @@ const Sidebar = () => {
 function Workflow() {
   return (
     <div>
-      <header>
-        <h1>workflow</h1>
-      </header>
       <Sidebar />
       <div className="process-flow">
         <div className="container">
           <div className="stage">
-            <Plan />
+            <p>plan</p>
+          </div>
+          <div className="stage" style={{ backgroundColor: "#99ffbb" }}>
+            <p>create</p>
           </div>
           <div className="stage">
-            <Create />
+            <p>build</p>
           </div>
           <div className="stage">
-            <Build />
+            <p>release</p>
           </div>
           <div className="stage">
-            <Release />
-          </div>
-          <div className="stage">
-            <Support />
+            <p>support</p>
           </div>
 
           <div className="stage">

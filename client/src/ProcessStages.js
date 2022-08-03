@@ -1,4 +1,6 @@
 import { SourcingTasks, CreateTasks } from "./TaskDescriptions";
+import { useState } from "react";
+import Popup from "./Popup";
 import "./Tasks.css";
 
 function PlanStages() {
@@ -18,9 +20,11 @@ function PlanStages() {
 }
 
 function CreateStages() {
-  function test() {
-    console.log("clicked");
-  }
+  const [isOpen, setIsOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <div>
@@ -28,19 +32,24 @@ function CreateStages() {
       {SourcingTasks.map((task, index) => {
         return (
           <div key={index}>
-            <p onClick={test}>{task.task}</p>
-            {/* <p>{task.description}</p> */}
+            <p onClick={togglePopup}>{task.task}</p>
+            {isOpen && (
+              <Popup
+                content={
+                  <div>
+                    {console.log(task.description)}
+                    <p>{task.description}</p>
+                    <h4>responsible</h4>
+                    <p>{task.responsible}</p>
+                  </div>
+                }
+                handleClose={togglePopup}
+              />
+            )}
           </div>
         );
       })}
       <h4>Content creation</h4>
-      {CreateTasks.map((task, index) => {
-        return (
-          <div key={index}>
-            <p>{task.task}</p>
-          </div>
-        );
-      })}
     </div>
   );
 }
