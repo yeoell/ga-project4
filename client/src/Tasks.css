@@ -1,4 +1,8 @@
-p:hover {
+.remove:hover {
+  text-decoration: line-through;
+  cursor: pointer;
+}
+.task:hover {
   text-decoration: underline;
   cursor: pointer;
 }

@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Workflow from "./Workflow";
-import Login from "./Login";
+import Edit from "./Edit";
 import Contact from "./Contact";
+import Login from "./Login";
 // import SignIn from "./SignIn";
 import "./Navbar.css";
 
@@ -14,6 +15,9 @@ export default function NavBar() {
             <Link to="/">workflow</Link>
           </button>
           <button>
+            <Link to="/edit">process refinement</Link>
+          </button>
+          <button>
             <Link to="/contact">contact us</Link>
           </button>
           <button>
@@ -23,6 +27,7 @@ export default function NavBar() {
 
         <Routes>
           <Route path="/" element={<Workflow />} />
+          <Route path="/edit" element={<Edit />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
         </Routes>

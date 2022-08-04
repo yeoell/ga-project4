@@ -1,20 +1,24 @@
 const SourcingTasks = [
   {
+    id: 1,
     task: "Writer/SME sourcing",
     description: "find writers for the project",
     responsible: "BAM",
   },
   {
+    id: 2,
     task: "Contracts and SOWs",
     description: "define terms and payments, and milestones",
     responsible: "PM",
   },
   {
+    id: 3,
     task: "Creating and archiving contracts",
     description: "lorem ipsum",
     responsible: "PM",
   },
   {
+    id: 4,
     task: "Briefing and onboarding",
     description: "provide writers/SMEs with a project brief",
     responsible: "ADM",

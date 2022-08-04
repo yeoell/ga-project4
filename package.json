@@ -29,5 +29,6 @@
     "nodemon": "^2.0.19",
     "pg": "^8.7.3"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "proxy": "http://localhost:3001"
 }

@@ -32,15 +32,15 @@ function CreateStages() {
       {SourcingTasks.map((task, index) => {
         return (
           <div key={index}>
-            <p onClick={togglePopup}>{task.task}</p>
+            <p className="task" onClick={togglePopup}>
+              {task.task}
+            </p>
+            <em>{task.description}</em>
             {isOpen && (
               <Popup
                 content={
                   <div>
-                    {console.log(task.description)}
                     <p>{task.description}</p>
-                    <h4>responsible</h4>
-                    <p>{task.responsible}</p>
                   </div>
                 }
                 handleClose={togglePopup}

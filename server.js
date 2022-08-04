@@ -11,11 +11,11 @@ const signupController = require("./controllers/signup");
 const port = process.env.PORT || 3001;
 const app = express();
 
-app.get("/", (req, res) => {
+app.use(express.static("./client/build"));
+
+app.get("/test", (req, res) => {
   res.send("test");
 });
-
-app.use(express.static("./client/build"));
 
 app.use(
   expressSession({
