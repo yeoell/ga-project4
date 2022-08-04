@@ -18,17 +18,20 @@ header {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, auto);
   column-gap: 5px;
   row-gap: 5px;
-  /* height: 1500px; */
 }
 
 .stage {
   margin: 5px;
   display: inline-flex;
-  /* height: 50px; */
   width: 200px;
   border: solid 1px #000;
   text-align: left;
+}
+
+.role-icon:hover .role {
+  color: #97d5eb;
+  cursor: pointer;
 }

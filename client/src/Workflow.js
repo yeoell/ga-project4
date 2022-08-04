@@ -17,24 +17,24 @@ const Sidebar = () => {
       <aside ref={stickyRef}>
         <div>
           <ul className="sticky" style={{ listStyleType: "none", padding: 0 }}>
-            <li>
-              <FontAwesomeIcon icon={faUser} size="2x" /> <br />
+            <li className="role-icon">
+              <FontAwesomeIcon className="role" icon={faUser} size="2x" /> <br />
               BDM
             </li>
-            <li>
-              <FontAwesomeIcon icon={faUser} size="2x" /> <br />
+            <li className="role-icon">
+              <FontAwesomeIcon className="role" icon={faUser} size="2x" /> <br />
               BAM
             </li>
-            <li>
-              <FontAwesomeIcon icon={faUser} size="2x" /> <br />
+            <li className="role-icon">
+              <FontAwesomeIcon className="role" icon={faUser} size="2x" /> <br />
               PM
             </li>
-            <li>
-              <FontAwesomeIcon icon={faUser} size="2x" /> <br />
+            <li className="role-icon">
+              <FontAwesomeIcon className="role" icon={faUser} size="2x" /> <br />
               ADM
             </li>
-            <li>
-              <FontAwesomeIcon icon={faUser} size="2x" /> <br />
+            <li className="role-icon">
+              <FontAwesomeIcon className="role" icon={faUser} size="2x" /> <br />
               MM
             </li>
           </ul>
@@ -47,7 +47,6 @@ const Sidebar = () => {
 function Workflow() {
   return (
     <div>
-      <Sidebar />
       <div className="process-flow">
         <div className="container">
           <div className="stage">
@@ -65,6 +64,7 @@ function Workflow() {
           <div className="stage">
             <p>support</p>
           </div>
+          <div></div>
 
           <div className="stage">
             <PlanProcess />
@@ -81,7 +81,9 @@ function Workflow() {
           <div className="stage">
             <SupportProcess />
           </div>
-          <div></div>
+          <div>
+            <Sidebar />
+          </div>
         </div>
       </div>
     </div>
@@ -89,18 +91,3 @@ function Workflow() {
 }
 
 export default Workflow;
-
-// Be primarily a React single-page-app (not server-generated HTML)
-// Use at least 2 different URL paths to allow users to open 'pages' within the app (e.g. using ReactRouter)
-// main page with game
-// create account/login
-//
-// Allow users to add, share, modify or organise some kind of data for some useful purpose.
-// add: create account
-// Have passing tests for some core logic and/or components
-
-// visual process workflow with integrated raci
-// interactive sections
-// components:
-// workflow component to load process
-// on click to show
