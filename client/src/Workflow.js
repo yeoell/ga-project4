@@ -1,12 +1,6 @@
 import "./Workflow.css";
-// import {
-//   PlanProcess,
-//   CreateProcess,
-//   BuildProcess,
-//   ReleaseProcess,
-//   SupportProcess,
-// } from "./Process";
-
+import { useState, useEffect } from "react";
+import { Roles } from "./TaskDescriptions";
 import {
   CreateStages,
   PlanStages,
@@ -15,45 +9,60 @@ import {
   SupportStages,
 } from "./ProcessStages";
 
-import { useStickyBox } from "react-sticky-box";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
-const Sidebar = () => {
-  const stickyRef = useStickyBox({ offsetTop: 20, offsetBottom: 20 });
-  return (
-    <div className="row">
-      <aside ref={stickyRef}>
-        <div>
-          <ul className="sticky" style={{ listStyleType: "none", padding: 0 }}>
-            <li className="role-icon">
-              <FontAwesomeIcon className="role" icon={faUser} size="2x" /> <br />
-              BDM
-            </li>
-            <li className="role-icon">
-              <FontAwesomeIcon className="role" icon={faUser} size="2x" /> <br />
-              BAM
-            </li>
-            <li className="role-icon">
-              <FontAwesomeIcon className="role" icon={faUser} size="2x" /> <br />
-              PM
-            </li>
-            <li className="role-icon">
-              <FontAwesomeIcon className="role" icon={faUser} size="2x" /> <br />
-              ADM
-            </li>
-            <li className="role-icon">
-              <FontAwesomeIcon className="role" icon={faUser} size="2x" /> <br />
-              MM
-            </li>
-          </ul>
-        </div>
-      </aside>
-    </div>
-  );
-};
-
 function Workflow() {
+  const [roleSelect, setRoleSelect] = useState("");
+
+  const [bdmHigh, setbdmHigh] = useState(false);
+  const [bamHigh, setbamHigh] = useState(false);
+  const [pmHigh, setpmHigh] = useState(false);
+  const [admHigh, setadmHigh] = useState(false);
+  const [mmHigh, setmmHigh] = useState(false);
+
+  useEffect(() => {
+    roleSelect === "BDM" ? setbdmHigh(true) : setbdmHigh(false);
+    roleSelect === "BA" ? setbamHigh(true) : setbamHigh(false);
+    roleSelect === "PM" ? setpmHigh(true) : setpmHigh(false);
+    roleSelect === "ADM" ? setadmHigh(true) : setadmHigh(false);
+    roleSelect === "MM" ? setmmHigh(true) : setmmHigh(false);
+  }, [roleSelect]);
+
+  const handleOnClick = (e) => {
+    setRoleSelect(e.currentTarget.id);
+    console.log(e.currentTarget.id);
+  };
+
+  // const renderResult = () => {
+  //   let result;
+  //   roleSelect === "" ? (result = "") : (result = roleSelect);
+  //   return result;
+  // };
+
+  const Sidebar = () => {
+    return (
+      <div className="row" data-testid="content">
+        <aside>
+          <div>
+            <ul id={roleSelect} className="sticky" style={{ listStyleType: "none", padding: 0 }}>
+              {Roles.map((role, index) => {
+                return (
+                  <div>
+                    <li id={role} key={index} className="role-icon" onClick={handleOnClick}>
+                      <FontAwesomeIcon className="title" icon={faUser} size="2x" /> <br />
+                      {role}
+                    </li>
+                  </div>
+                );
+              })}
+            </ul>
+          </div>
+        </aside>
+      </div>
+    );
+  };
+
   return (
     <div>
       <div className="process-flow">

@@ -71,7 +71,7 @@ function Edit() {
           <div></div>
         </div>
         <div>
-          <p>suggested refinement</p>
+          <h3>suggested refinement</h3>
         </div>
         <div className="container">
           <div className="stage"></div>

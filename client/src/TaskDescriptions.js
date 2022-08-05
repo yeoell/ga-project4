@@ -1,3 +1,5 @@
+const Roles = ["BDM", "BAM", "PM", "ADM", "MM"];
+
 const SourcingTasks = [
   {
     id: 1,
@@ -47,4 +49,4 @@ const CreateTasks = [
   },
 ];
 
-export { SourcingTasks, CreateTasks };
+export { SourcingTasks, CreateTasks, Roles };

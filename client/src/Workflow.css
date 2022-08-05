@@ -31,7 +31,11 @@ header {
   text-align: left;
 }
 
-.role-icon:hover .role {
+.role-icon {
+  text-align: center;
+}
+
+.role-icon:hover .title {
   color: #97d5eb;
   cursor: pointer;
 }
