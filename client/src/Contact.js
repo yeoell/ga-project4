@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { BDM, BAM, PM, ADM, MM } from "./ContactInfo";
 
 export default function Contact() {
-  const [role, setRole] = useState("selectRole");
+  const [role, setRole] = useState("");
 
   const [bdmViz, setbdmViz] = useState(false);
   const [bamViz, setbamViz] = useState(false);
@@ -24,12 +24,13 @@ export default function Contact() {
 
   const renderResult = () => {
     let result;
-    role === "selectRole" ? (result = "select role") : (result = role);
+    role === "" ? (result = "") : (result = role);
     return result;
   };
 
   return (
     <div>
+      <h3>Select role</h3>
       <div>
         <select value={role} onChange={handleOnChange}>
           <option value="selectRole"></option>
@@ -41,7 +42,7 @@ export default function Contact() {
         </select>
       </div>
       <div>
-        <h3>{renderResult()}</h3>
+        <h4>{renderResult()}</h4>
       </div>
       {bdmViz && <BDM />}
       {bamViz && <BAM />}

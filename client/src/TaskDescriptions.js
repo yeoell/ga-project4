@@ -1,5 +1,46 @@
 const Roles = ["BDM", "BAM", "PM", "ADM", "MM"];
 
+const PrePlanTasks = [
+  {
+    id: 1,
+    task: "Consult on content pipeline",
+    description: "lorem ipsum",
+    responsible: "BDM",
+  },
+  {
+    id: 2,
+    task: "Create budget",
+    description: "lorem ipsum",
+    responsible: "PM",
+  },
+  {
+    id: 3,
+    task: "Create schedule and input into system",
+    description: "lorem ipsum",
+    responsible: "PM",
+  },
+];
+const PlanTasks = [
+  {
+    id: 1,
+    task: "Writer guidelines",
+    description: "lorem ipsum",
+    responsible: "ADM",
+  },
+  {
+    id: 2,
+    task: "Determine content requirements",
+    description: "lorem ipsum",
+    responsible: "ADM",
+  },
+  {
+    id: 3,
+    task: "Product proposal meeting",
+    description: "lorem ipsum",
+    responsible: "PM",
+  },
+];
+
 const SourcingTasks = [
   {
     id: 1,
@@ -49,4 +90,4 @@ const CreateTasks = [
   },
 ];
 
-export { SourcingTasks, CreateTasks, Roles };
+export { PrePlanTasks, PlanTasks, SourcingTasks, CreateTasks, Roles };

@@ -30,8 +30,8 @@ function Workflow() {
   }, [roleSelect]);
 
   const handleOnClick = (e) => {
-    setRoleSelect(e.currentTarget.id);
     console.log(e.currentTarget.id);
+    setRoleSelect(e.currentTarget.id);
   };
 
   // const renderResult = () => {
@@ -48,8 +48,8 @@ function Workflow() {
             <ul id={roleSelect} className="sticky" style={{ listStyleType: "none", padding: 0 }}>
               {Roles.map((role, index) => {
                 return (
-                  <div>
-                    <li id={role} key={index} className="role-icon" onClick={handleOnClick}>
+                  <div key={index}>
+                    <li id={role} className="role-icon" onClick={handleOnClick}>
                       <FontAwesomeIcon className="title" icon={faUser} size="2x" /> <br />
                       {role}
                     </li>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import "./Workflow.css";
 import { SourcingTasks } from "./TaskDescriptions";
+import "./Tasks.css";
+import "./Workflow.css";
 
 function Edit() {
   //   const [editedSourcingTasks, setSourcingTasks] = useState([]);
@@ -13,9 +14,9 @@ function Edit() {
     console.log(updatedSourcing);
   };
 
-  const handleClick = () => {
-    setDeleted((current) => !current);
-  };
+  // const handleClick = () => {
+  //   setDeleted((current) => !current);
+  // };
 
   return (
     <div>
@@ -44,25 +45,27 @@ function Edit() {
           </div>
           <div></div>
           <div className="stage"></div>
-          <div className="stage">
+          <div className="stage process-box">
             <div>
               <h4>Sourcing</h4>
-              {SourcingTasks.map((task) => {
-                return (
-                  <div key={task.id}>
-                    <p
-                      className="remove"
-                      onClick={() => {
-                        removeTask(task.id);
-                        // handleClick();
-                      }}
-                      style={{ textDecoration: isDeleted ? "line-through" : "" }}
-                    >
-                      {task.task}
-                    </p>
-                  </div>
-                );
-              })}
+              <ul>
+                {SourcingTasks.map((task) => {
+                  return (
+                    <div key={task.id} className="task-box">
+                      <li
+                        className="remove"
+                        onClick={() => {
+                          removeTask(task.id);
+                          // handleClick();
+                        }}
+                        style={{ textDecoration: isDeleted ? "line-through" : "" }}
+                      >
+                        {task.task}
+                      </li>
+                    </div>
+                  );
+                })}
+              </ul>
             </div>
           </div>
           <div className="stage"></div>
@@ -75,16 +78,18 @@ function Edit() {
         </div>
         <div className="container">
           <div className="stage"></div>
-          <div className="stage">
+          <div className="stage process-box">
             <div>
               <h4>Sourcing</h4>
-              {updatedSourcing.map((task) => {
-                return (
-                  <div key={task.id}>
-                    <p>{task.task}</p>
-                  </div>
-                );
-              })}
+              <ul>
+                {updatedSourcing.map((task) => {
+                  return (
+                    <div key={task.id} className="task-box">
+                      <li>{task.task}</li>
+                    </div>
+                  );
+                })}
+              </ul>
             </div>
           </div>
           <div className="stage"></div>
