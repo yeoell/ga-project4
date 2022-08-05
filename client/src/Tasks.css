@@ -1,8 +1,26 @@
-.remove:hover {
-  text-decoration: line-through;
-  cursor: pointer;
+h4 {
+  padding-left: 3.5px;
 }
+
+ul {
+  padding: 5px;
+}
+
+.task-box > li {
+  padding: 4px;
+  border-bottom: 1px dashed #bbb;
+  list-style: none;
+}
+
+.process-box {
+  padding: 5px;
+}
+
 .task:hover {
   text-decoration: underline;
+  cursor: pointer;
+}
+.remove:hover {
+  text-decoration: line-through;
   cursor: pointer;
 }

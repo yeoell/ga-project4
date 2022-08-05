@@ -21,7 +21,7 @@
   overflow: auto;
 }
 
-.close-icon {
+/* .close-icon {
   content: "x";
   cursor: pointer;
   position: fixed;
@@ -33,6 +33,6 @@
   border-radius: 50%;
   line-height: 20px;
   text-align: center;
-  /* border: 1px solid #999; */
+  /* border: 1px solid #999;
   font-size: 20px;
-}
+} */

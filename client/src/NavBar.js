@@ -3,7 +3,6 @@ import Workflow from "./Workflow";
 import Edit from "./Edit";
 import Contact from "./Contact";
 import Login from "./Login";
-// import SignIn from "./SignIn";
 import "./Navbar.css";
 
 export default function NavBar() {

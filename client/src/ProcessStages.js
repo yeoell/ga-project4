@@ -27,28 +27,31 @@ function CreateStages() {
   };
 
   return (
-    <div>
+    <div className="process-box">
       <h4>Sourcing</h4>
-      {SourcingTasks.map((task, index) => {
-        return (
-          <div key={index}>
-            <p className="task" onClick={togglePopup}>
-              {task.task}
-            </p>
-            <em>{task.description}</em>
-            {isOpen && (
-              <Popup
-                content={
-                  <div>
-                    <p>{task.description}</p>
-                  </div>
-                }
-                handleClose={togglePopup}
-              />
-            )}
-          </div>
-        );
-      })}
+      <ul>
+        {SourcingTasks.map((task, index) => {
+          return (
+            <div className="task-box" key={index} onClick={togglePopup}>
+              <li className="task">{task.task}</li>
+              {isOpen && (
+                <Popup
+                  content={
+                    <div key={index}>
+                      {console.log(index)}
+                      <p>{task.description}</p>
+                      <p>
+                        <b>responsible:</b> {task.responsible}
+                      </p>
+                    </div>
+                  }
+                  handleClose={togglePopup}
+                />
+              )}
+            </div>
+          );
+        })}
+      </ul>
       <h4>Content creation</h4>
     </div>
   );
@@ -72,7 +75,7 @@ function ReleaseStages() {
     <div>
       <h4>Product training</h4>
       <p>Train tech support</p>
-      <p>Train Marketing</p>
+      <p>Engage Marketing</p>
       <p>Train Sales</p>
       <p>Engage in sales efforts</p>
     </div>
@@ -86,7 +89,7 @@ function SupportStages() {
       <p>Market dev</p>
       <h4>Continuous improvement</h4>
       <p>Corrections</p>
-      <p>Engage SME/writers review in Corrections</p>
+      <p>Engage SME/writer review in corrections</p>
       <p>Tech product issues</p>
     </div>
   );

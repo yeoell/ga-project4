@@ -1,11 +1,20 @@
 import "./Workflow.css";
+// import {
+//   PlanProcess,
+//   CreateProcess,
+//   BuildProcess,
+//   ReleaseProcess,
+//   SupportProcess,
+// } from "./Process";
+
 import {
-  PlanProcess,
-  CreateProcess,
-  BuildProcess,
-  ReleaseProcess,
-  SupportProcess,
-} from "./Process";
+  CreateStages,
+  PlanStages,
+  BuildStages,
+  ReleaseStages,
+  SupportStages,
+} from "./ProcessStages";
+
 import { useStickyBox } from "react-sticky-box";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
@@ -67,19 +76,19 @@ function Workflow() {
           <div></div>
 
           <div className="stage">
-            <PlanProcess />
+            <PlanStages />
           </div>
           <div className="stage">
-            <CreateProcess />
+            <CreateStages />
           </div>
           <div className="stage">
-            <BuildProcess />
+            <BuildStages />
           </div>
           <div className="stage">
-            <ReleaseProcess />
+            <ReleaseStages />
           </div>
           <div className="stage">
-            <SupportProcess />
+            <SupportStages />
           </div>
           <div>
             <Sidebar />

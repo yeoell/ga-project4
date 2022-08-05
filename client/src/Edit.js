@@ -3,20 +3,19 @@ import "./Workflow.css";
 import { SourcingTasks } from "./TaskDescriptions";
 
 function Edit() {
-  const [editedSourcingTasks, setSourcingTasks] = useState([SourcingTasks]);
+  //   const [editedSourcingTasks, setSourcingTasks] = useState([]);
   const [isDeleted, setDeleted] = useState(false);
+  const [updatedSourcing, setUpdates] = useState([]);
 
   const removeTask = (id) => {
     const newTasks = SourcingTasks.filter((job) => job.id !== id);
-    // console.log(newTasks);
-    setSourcingTasks(newTasks);
+    setUpdates(newTasks);
+    console.log(updatedSourcing);
   };
 
   const handleClick = () => {
     setDeleted((current) => !current);
   };
-
-  console.log(editedSourcingTasks);
 
   return (
     <div>
@@ -44,7 +43,6 @@ function Edit() {
             <em>support</em>
           </div>
           <div></div>
-
           <div className="stage"></div>
           <div className="stage">
             <div>
@@ -56,7 +54,7 @@ function Edit() {
                       className="remove"
                       onClick={() => {
                         removeTask(task.id);
-                        handleClick();
+                        // handleClick();
                       }}
                       style={{ textDecoration: isDeleted ? "line-through" : "" }}
                     >
@@ -71,11 +69,22 @@ function Edit() {
           <div className="stage"></div>
           <div className="stage"></div>
           <div></div>
+        </div>
+        <div>
+          <p>suggested refinement</p>
+        </div>
+        <div className="container">
           <div className="stage"></div>
           <div className="stage">
             <div>
               <h4>Sourcing</h4>
-              <p>{}</p>
+              {updatedSourcing.map((task) => {
+                return (
+                  <div key={task.id}>
+                    <p>{task.task}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
           <div className="stage"></div>
