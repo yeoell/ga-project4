@@ -8,6 +8,14 @@ header {
   justify-content: center;
 }
 
+.subhead {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0 5px 0;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #aeaeae;
+}
+
 .process-flow {
   margin: auto;
   display: flex;

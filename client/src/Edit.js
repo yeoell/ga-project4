@@ -14,16 +14,10 @@ function Edit() {
     console.log(updatedSourcing);
   };
 
-  // const handleClick = () => {
-  //   setDeleted((current) => !current);
-  // };
-
   return (
     <div>
-      <div
-        style={{ display: "flex", justifyContent: "justify-content: center", marginBottom: "15px" }}
-      >
-        <h3>suggest tasks to remove for process refinement</h3>
+      <div>
+        <h2 className="subhead">suggest tasks to remove for process refinement</h2>
       </div>
 
       <div className="process-flow">
@@ -56,7 +50,6 @@ function Edit() {
                         className="remove"
                         onClick={() => {
                           removeTask(task.id);
-                          // handleClick();
                         }}
                         style={{ textDecoration: isDeleted ? "line-through" : "" }}
                       >

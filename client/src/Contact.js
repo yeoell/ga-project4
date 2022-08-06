@@ -30,6 +30,7 @@ export default function Contact() {
 
   return (
     <div>
+      <h2 className="subhead">contact</h2>
       <h3>Select role</h3>
       <div>
         <select value={role} onChange={handleOnChange}>
@@ -43,12 +44,12 @@ export default function Contact() {
       </div>
       <div>
         <h4>{renderResult()}</h4>
+        {bdmViz && <BDM />}
+        {bamViz && <BAM />}
+        {pmViz && <PM />}
+        {admViz && <ADM />}
+        {mmViz && <MM />}
       </div>
-      {bdmViz && <BDM />}
-      {bamViz && <BAM />}
-      {pmViz && <PM />}
-      {admViz && <ADM />}
-      {mmViz && <MM />}
     </div>
   );
 }
