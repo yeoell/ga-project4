@@ -45,10 +45,9 @@ app.use((err, req, res, next) => {
   next(err);
 });
 
-app.listen(port, () => {
-  console.log(`server listening on http://localhost:${port}`);
-});
-
 server.get("/*", (req, res) => {
   res.sendFile(__dirname + "/client/build/index.html");
+});
+app.listen(port, () => {
+  console.log(`server listening on http://localhost:${port}`);
 });
