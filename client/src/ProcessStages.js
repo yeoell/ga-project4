@@ -29,7 +29,6 @@ function PlanStages() {
                 <Popup
                   content={
                     <div key={index}>
-                      {console.log(index)}
                       <p>{task.description}</p>
                       <p>
                         <b>responsible:</b> {task.responsible}
@@ -66,7 +65,6 @@ function CreateStages() {
                 <Popup
                   content={
                     <div key={index}>
-                      {console.log(index)}
                       <p>{task.description}</p>
                       <p>
                         <b>responsible:</b> {task.responsible}
@@ -102,7 +100,6 @@ function BuildStages() {
                 <Popup
                   content={
                     <div key={index}>
-                      {console.log(index)}
                       <p>{task.description}</p>
                       <p>
                         <b>responsible:</b> {task.responsible}
@@ -138,7 +135,6 @@ function ReleaseStages() {
                 <Popup
                   content={
                     <div key={index}>
-                      {console.log(index)}
                       <p>{task.description}</p>
                       <p>
                         <b>responsible:</b> {task.responsible}
@@ -174,7 +170,6 @@ function SupportStages() {
                 <Popup
                   content={
                     <div key={index}>
-                      {console.log(index)}
                       <p>{task.description}</p>
                       <p>
                         <b>responsible:</b> {task.responsible}

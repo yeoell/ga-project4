@@ -114,7 +114,7 @@ function Edit() {
           </div>
           <div className="stage process-box">
             <div>
-              <h4>Sourcing</h4>
+              <h4>Sourcing and creation</h4>
               <ul>
                 {SourcingTasks.map((task) => {
                   return (
@@ -212,7 +212,7 @@ function Edit() {
         <div className="container">
           <div className="stage process-box">
             <div>
-              <h4>Sourcing</h4>
+              <h4>Product planning</h4>
               <ul>
                 {updatedPlan.map((task) => {
                   return (
@@ -226,7 +226,7 @@ function Edit() {
           </div>
           <div className="stage process-box">
             <div>
-              <h4>Sourcing</h4>
+              <h4>Sourcing and creation</h4>
               <ul>
                 {updatedSourcing.map((task) => {
                   return (
@@ -240,7 +240,7 @@ function Edit() {
           </div>
           <div className="stage process-box">
             <div>
-              <h4>Sourcing</h4>
+              <h4>Content composition</h4>
               <ul>
                 {updatedBuild.map((task) => {
                   return (
