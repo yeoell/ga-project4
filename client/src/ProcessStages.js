@@ -24,6 +24,7 @@ function PlanStages() {
           return (
             <div className="task-box" key={index} onClick={togglePopup}>
               <li className="task">{task.task}</li>
+              {/* popup not working correctly - bringing up windows for all arrays */}
               {isOpen && (
                 <Popup
                   content={
