@@ -44,7 +44,7 @@ function Edit() {
             <em>support</em>
           </div>
           <div></div>
-          <div className="stage"></div>
+          <div className="stage process-box"></div>
           <div className="stage process-box">
             <div>
               <h4>Sourcing</h4>

@@ -1,20 +1,47 @@
-import { SourcingTasks, CreateTasks } from "./TaskDescriptions";
+import {
+  PlanTasks,
+  SourcingTasks,
+  BuildTasks,
+  ReleaseTasks,
+  SupportTasks,
+} from "./TaskDescriptions";
 import { useState } from "react";
 import Popup from "./Popup";
 import "./Tasks.css";
 
 function PlanStages() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div>
+    <div className="process-box">
       <h4>Product planning</h4>
-      <p>Consult on content pipeline</p>
-      <p>Create budget</p>
-      <p>Create schedule and input into system</p>
-      <h4>Content planning</h4>
-      <p>Writer guidelines</p>
-      <p>Determine content requirements</p>
-      <p>Product proposal meeting</p>
-      <p>Industry endorsement</p>
+      <ul>
+        {PlanTasks.map((task, index) => {
+          return (
+            <div className="task-box" key={index} onClick={togglePopup}>
+              <li className="task">{task.task}</li>
+              {isOpen && (
+                <Popup
+                  content={
+                    <div key={index}>
+                      {console.log(index)}
+                      <p>{task.description}</p>
+                      <p>
+                        <b>responsible:</b> {task.responsible}
+                      </p>
+                    </div>
+                  }
+                  handleClose={togglePopup}
+                />
+              )}
+            </div>
+          );
+        })}
+      </ul>
     </div>
   );
 }
@@ -28,7 +55,7 @@ function CreateStages() {
 
   return (
     <div className="process-box">
-      <h4>Sourcing</h4>
+      <h4>Sourcing and creation</h4>
       <ul>
         {SourcingTasks.map((task, index) => {
           return (
@@ -52,45 +79,114 @@ function CreateStages() {
           );
         })}
       </ul>
-      <h4>Content creation</h4>
     </div>
   );
 }
 
 function BuildStages() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
   return (
-    <div>
+    <div className="process-box">
       <h4>Content composition</h4>
-      <p>Copyedit, proofread, style assessment</p>
-      <p>Artwork list creation</p>
-      <p>Permissions acquision</p>
-      <p>Full suite creation</p>
-      <p>Post final assets for Marketing</p>
+      <ul>
+        {BuildTasks.map((task, index) => {
+          return (
+            <div className="task-box" key={index} onClick={togglePopup}>
+              <li className="task">{task.task}</li>
+              {isOpen && (
+                <Popup
+                  content={
+                    <div key={index}>
+                      {console.log(index)}
+                      <p>{task.description}</p>
+                      <p>
+                        <b>responsible:</b> {task.responsible}
+                      </p>
+                    </div>
+                  }
+                  handleClose={togglePopup}
+                />
+              )}
+            </div>
+          );
+        })}
+      </ul>
     </div>
   );
 }
 
 function ReleaseStages() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
   return (
-    <div>
-      <h4>Product training</h4>
-      <p>Train tech support</p>
-      <p>Engage Marketing</p>
-      <p>Train Sales</p>
-      <p>Engage in sales efforts</p>
+    <div className="process-box">
+      <h4>Release</h4>
+      <ul>
+        {ReleaseTasks.map((task, index) => {
+          return (
+            <div className="task-box" key={index} onClick={togglePopup}>
+              <li className="task">{task.task}</li>
+              {isOpen && (
+                <Popup
+                  content={
+                    <div key={index}>
+                      {console.log(index)}
+                      <p>{task.description}</p>
+                      <p>
+                        <b>responsible:</b> {task.responsible}
+                      </p>
+                    </div>
+                  }
+                  handleClose={togglePopup}
+                />
+              )}
+            </div>
+          );
+        })}
+      </ul>
     </div>
   );
 }
 
 function SupportStages() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
   return (
-    <div>
-      <h4>Product selling</h4>
-      <p>Market dev</p>
+    <div className="process-box">
       <h4>Continuous improvement</h4>
-      <p>Corrections</p>
-      <p>Engage SME/writer review in corrections</p>
-      <p>Tech product issues</p>
+      <ul>
+        {SupportTasks.map((task, index) => {
+          return (
+            <div className="task-box" key={index} onClick={togglePopup}>
+              <li className="task">{task.task}</li>
+              {isOpen && (
+                <Popup
+                  content={
+                    <div key={index}>
+                      {console.log(index)}
+                      <p>{task.description}</p>
+                      <p>
+                        <b>responsible:</b> {task.responsible}
+                      </p>
+                    </div>
+                  }
+                  handleClose={togglePopup}
+                />
+              )}
+            </div>
+          );
+        })}
+      </ul>
     </div>
   );
 }

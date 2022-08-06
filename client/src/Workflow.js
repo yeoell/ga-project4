@@ -15,20 +15,6 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 function Workflow() {
   const [roleSelect, setRoleSelect] = useState("");
 
-  const [bdmHigh, setbdmHigh] = useState(false);
-  const [bamHigh, setbamHigh] = useState(false);
-  const [pmHigh, setpmHigh] = useState(false);
-  const [admHigh, setadmHigh] = useState(false);
-  const [mmHigh, setmmHigh] = useState(false);
-
-  useEffect(() => {
-    roleSelect === "BDM" ? setbdmHigh(true) : setbdmHigh(false);
-    roleSelect === "BA" ? setbamHigh(true) : setbamHigh(false);
-    roleSelect === "PM" ? setpmHigh(true) : setpmHigh(false);
-    roleSelect === "ADM" ? setadmHigh(true) : setadmHigh(false);
-    roleSelect === "MM" ? setmmHigh(true) : setmmHigh(false);
-  }, [roleSelect]);
-
   const handleOnClick = (e) => {
     console.log(e.currentTarget.id);
     setRoleSelect(e.currentTarget.id);
@@ -70,7 +56,7 @@ function Workflow() {
           <div className="stage">
             <p>plan</p>
           </div>
-          <div className="stage" style={{ backgroundColor: "#99ffbb" }}>
+          <div className="stage">
             <p>create</p>
           </div>
           <div className="stage">
